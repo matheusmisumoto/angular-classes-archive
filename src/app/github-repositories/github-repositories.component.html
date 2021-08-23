@@ -1,0 +1,12 @@
+<div *ngIf="getRepositories()" class="container-fluid mb-5">
+  <div class="mt-5" style="background-image:url('{{this.github.avatarURL}}'); background-size: cover; width: 190px; height: 190px; border-radius: 190px; margin: 0 auto;"></div>
+  <h1 class="mt-3 text-center">My repositories on GitHub</h1>
+    <p class="mt-3 mb-3 text-center"><a href="{{this.github.profileURL}}">{{this.github.profileURL}}</a></p>
+    <div class="card mt-5" *ngFor="let repo of this.github.dados">
+      <div class="card-body">
+        <h4 class="card-title">{{repo.name}}</h4>
+        <p>{{repo.description}}</p>
+        <a href="{{repo.html_url}}" target="_blank" class="btn btn-primary">Go to repository</a>
+      </div>
+    </div>
+</div>
