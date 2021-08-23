@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { GithubRepositoriesComponent } from './github-repositories/github-repositories.component';
 import { GithubService } from './github.service';
 import { HomeComponent } from './home/home.component';
+import { RandomNumbersComponent } from './random-numbers/random-numbers.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    GithubRepositoriesComponent
+    GithubRepositoriesComponent,
+    RandomNumbersComponent
   ],
   imports: [
     BrowserModule,

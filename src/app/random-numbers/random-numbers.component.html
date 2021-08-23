@@ -1,0 +1,17 @@
+<h1 class="my-5">Random Numbers</h1>
+<table class="table">
+  <thead>
+    <tr>
+        <th>#</th>
+        <th>Array Index</th>
+        <th>Number</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of getRandomNumberList(); index as i">
+        <td>{{i+1}}</td>
+        <td>{{i}}</td>
+        <td>{{getRandomNumber()}}</td>
+    </tr>
+  </tbody>
+</table>
