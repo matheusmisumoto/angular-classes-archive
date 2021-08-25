@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
-body, app-root { font-family: Inter; display: flex; flex-direction: column; min-height: 100vh; }
-main { flex: 2; }
+body, app-root { font-family: Inter; display: flex; flex-direction: column; min-height: 100vh; font-size: 17px;}
+main { flex: 2; max-width: 780px; }
 h1, h2, h3, h4, h5, h6 { font-weight: 700; letter-spacing: -0.025em; }
-footer { background-color: #C3C3C3; padding: 2em; box-sizing: border-box; }
+footer { background-color: #E0E0E0; padding: 2em; box-sizing: border-box; }

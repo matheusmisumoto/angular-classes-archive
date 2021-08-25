@@ -1,27 +1,24 @@
+// Array com discos e seus detalhes
+
 export const discs = [
     {
-        title: "Disco 1",
-        author: "Autor 1",
-        year: 2001
+      title: "Use your Illusion I",
+      author: "Guns 'n Roses",
+      year: 1992
     },
     {
-        title: "Disco 2",
-        author: "Autor 2",
-        year: 2002
+      title: "Use your Illusion II",
+      author: "Guns 'n Roses",
+      year: 1993
     },
     {
-        title: "Disco 3",
-        author: "Autor 3",
-        year: 2003
+      title: "No Border",
+      author: "JAM Project",
+      year: 2018
     },
     {
-        title: "Disco 4",
-        author: "Autor 4",
-        year: 2004
-    },
-    {
-        title: "Disco 5",
-        author: "Autor 5",
-        year: 2005
-    },
-]
+      title: "Thriller",
+      author: "Michael Jackson",
+      year: 1987
+    }
+  ]

@@ -1,0 +1,5 @@
+<h1 class="mt-5 mb-3">Album Collection</h1>
+<p class="mb-5">This project features a navigation through a music album collection. The list is generated from a TypeScript file, and the navigation to the details of each record is possible by passing its index by a URL parameter.</p>
+<ul *ngFor="let disc of list; index as i">
+  <li><a [routerLink] = "['/discs', i]">{{disc.title}}</a></li>
+</ul>

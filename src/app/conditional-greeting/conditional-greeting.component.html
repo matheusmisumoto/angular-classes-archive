@@ -1,0 +1,5 @@
+<h1 class="my-5">Conditional Greeting</h1>
+<p><strong>Current date:</strong> {{timestamp}}</p>
+<p>It's {{getHour()}}h, so {{getGreeting()}}!</p>
+<p *ngIf="getHour() % 2 == 0">The hour number is even.</p>
+<p *ngIf="getHour() % 2 != 0">The hour number is odd.</p>
