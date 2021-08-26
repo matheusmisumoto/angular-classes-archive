@@ -3,19 +3,18 @@ import { LoggerService } from '../logger.service';
 import { TimerService } from '../timer.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-app-log',
+  templateUrl: './app-log.component.html',
+  styleUrls: ['./app-log.component.css']
 })
-export class HomeComponent implements OnInit {
+export class AppLogComponent implements OnInit {
 
   constructor(public logger: LoggerService, public timer: TimerService) {
-    this.logger.add("HomeComponent constructed");
+    this.logger.add("AppLogComponent constructed");
   }
 
   ngOnInit(): void {
-    this.logger.add("HomeComponent initialized");
+    this.logger.add("AppLogComponent initialized");
   }
-
 
 }

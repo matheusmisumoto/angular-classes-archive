@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LoggerService } from '../logger.service';
+import { TimerService } from '../timer.service';
 
 @Component({
   selector: 'app-conditional-greeting',
@@ -28,9 +30,12 @@ export class ConditionalGreetingComponent implements OnInit {
     }
   }
 
-  constructor() { }
+  constructor(public logger: LoggerService, public timer: TimerService) {
+    this.logger.add("ConditionalGreetingComponent constructed");
+  }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.logger.add("ConditionalGreetingComponent initialized");
   }
 
 }

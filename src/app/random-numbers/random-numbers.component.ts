@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LoggerService } from '../logger.service';
+import { TimerService } from '../timer.service';
 
 @Component({
   selector: 'app-random',
@@ -22,9 +24,12 @@ export class RandomNumbersComponent implements OnInit {
     return list;
   }
 
-  constructor() { }
+  constructor(public logger: LoggerService, public timer: TimerService) {
+    this.logger.add("RandomNumbersComponent constructed");
+  }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.logger.add("RandomNumbersComponent initialized");
   }
 
 }

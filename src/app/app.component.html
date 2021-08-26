@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container container-xxl">
-    <a class="navbar-brand" [routerLink]="['/']">Angular Classes Archive</a>
+    <a class="navbar-brand" [routerLink]="['/']">{{title}}</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -24,6 +24,15 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" [routerLink]="['/calculator/simple-interest']">Simple Interest</a></li>
             <li><a class="dropdown-item" [routerLink]="['/calculator/compound-interest']">Compound Interest</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Services
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" [routerLink]="['/log']">Application Log</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/task-list']">Task List Manager</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LoggerService } from '../logger.service';
+import { TimerService } from '../timer.service';
 
 @Component({
   selector: 'app-compound-interest',
@@ -10,10 +12,12 @@ export class CompoundInterestComponent implements OnInit {
   i: number;
   t: number;
 
-  constructor() {
+  constructor(public logger: LoggerService, public timer: TimerService) {
     this.c = 1000;
     this.i = 0.10;
     this.t = 3;
+
+    this.logger.add("CompoundInterestComponent constructed");
   }
 
   showMeTheMoney(c: number,i: number,t: number){
@@ -25,7 +29,8 @@ export class CompoundInterestComponent implements OnInit {
     return result;
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.logger.add("CompoundInterestComponent initialized");
   }
 
 }

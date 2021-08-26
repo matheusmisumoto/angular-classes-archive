@@ -15,6 +15,11 @@ import { CompoundInterestComponent } from './compound-interest/compound-interest
 import { ConditionalGreetingComponent } from './conditional-greeting/conditional-greeting.component';
 import { DiscListComponent } from './disc-list/disc-list.component';
 import { DiscDetailsComponent } from './disc-details/disc-details.component';
+import { AppLogComponent } from './app-log/app-log.component';
+import { LoggerService } from './logger.service';
+import { TimerService } from './timer.service';
+import { TasksService } from './tasks.service';
+import { TaskListComponent } from './task-list/task-list.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +32,9 @@ import { DiscDetailsComponent } from './disc-details/disc-details.component';
     CompoundInterestComponent,
     ConditionalGreetingComponent,
     DiscListComponent,
-    DiscDetailsComponent
+    DiscDetailsComponent,
+    AppLogComponent,
+    TaskListComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +42,7 @@ import { DiscDetailsComponent } from './disc-details/disc-details.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [ GithubService ],
+  providers: [ GithubService, LoggerService, TimerService, TasksService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

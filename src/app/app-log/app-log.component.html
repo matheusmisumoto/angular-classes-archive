@@ -1,0 +1,13 @@
+<h1 class="mt-5 mb-3">Application Log</h1>
+<p class="mb-5">Demonstrate the concept of services in Angular by showing a log of events generated during user navigation.</p>
+
+<h2 class="mt-5 mb-3">Running time</h2>
+<p class="mb-5">This Angular website has been running for {{timer.getCount()}} seconds.</p>
+
+<h2 class="mt-5 mb-3">Event log</h2>
+
+<ul class="list-unstyled">
+    <li class="my-2" *ngFor="let message of this.logger.messages.slice().reverse()">{{message}}</li>
+</ul>
+
+<button class="btn btn-danger container-fluid" (click)="logger.clear()">Clear log</button>

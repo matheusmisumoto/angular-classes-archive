@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LoggerService } from '../logger.service';
+import { TimerService } from '../timer.service';
 
 // importa o array com os discos
 import { discs } from '../discs';
@@ -17,7 +19,9 @@ export class DiscDetailsComponent implements OnInit {
   disc: any;
   
   // private route: ActivatedRoute = permite a obtenção de parâmetro no recurso importado
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, public logger: LoggerService, public timer: TimerService) {
+    this.logger.add("DiscDetailsComponent constructed");
+  }
 
   ngOnInit() {
 
@@ -26,6 +30,8 @@ export class DiscDetailsComponent implements OnInit {
       this.disc = discs[+params.get('id')!];
     }
     );
+
+    this.logger.add("DiscDetailsComponent initialized");
   }
 
 }

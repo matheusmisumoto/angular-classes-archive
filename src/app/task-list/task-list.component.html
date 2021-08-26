@@ -1,0 +1,19 @@
+<h1 class="mt-5 mb-3">Task List</h1>
+<p class="mb-5">Demonstrate the concept of services in Angular with a task list managed by user input.</p>
+
+<h2 class="mt-5 mb-3">Add new task</h2>
+
+<div class="row">
+    <div class="col-2">
+        <input type="text" #title class="form-control" id="newtask" placeholder="Insert a new task">
+    </div>
+    <div class="col-2">
+        <button type="submit" (click)="this.tasks.add(title.value); title.value=''" class="btn btn-primary">Add</button>
+    </div>
+</div>
+
+<h2 class="mt-5 mb-3">Tasks</h2>
+
+<ul class="list-unstyled">
+    <li *ngFor="let task of this.tasks.getList(), index as i"><span (click)="this.tasks.remove(i)" class="badge bg-danger text-light my-2" style="cursor: pointer;">remove</span> {{task.title}}</li>
+</ul>
