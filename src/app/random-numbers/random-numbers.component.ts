@@ -8,20 +8,20 @@ import { TimerService } from '../timer.service';
   styleUrls: ['./random-numbers.component.css']
 })
 export class RandomNumbersComponent implements OnInit {
+  randomList: number[] = [];
 
   getRandomNumber(){
     return Math.round(50*Math.random());
   }
 
   getRandomNumberList(){
-    let list: number[] = [];
-    list.push(this.getRandomNumber());
-    list.push(this.getRandomNumber());
-    list.push(this.getRandomNumber());
-    list.push(this.getRandomNumber());
-    list.push(this.getRandomNumber());
-    list.push(this.getRandomNumber());
-    return list;
+    this.randomList.push(this.getRandomNumber());
+    this.randomList.push(this.getRandomNumber());
+    this.randomList.push(this.getRandomNumber());
+    this.randomList.push(this.getRandomNumber());
+    this.randomList.push(this.getRandomNumber());
+    this.randomList.push(this.getRandomNumber());
+    return this.randomList;
   }
 
   constructor(public logger: LoggerService, public timer: TimerService) {
@@ -29,6 +29,7 @@ export class RandomNumbersComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getRandomNumberList();
     this.logger.add("RandomNumbersComponent initialized");
   }
 

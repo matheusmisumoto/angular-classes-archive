@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { LoggerService } from './logger.service';
 
 interface Response extends Array<any> {
   name: string;
@@ -26,7 +27,9 @@ export class GithubService {
   login!: string;
   listRepository: Array<repository> = [];
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private logger: LoggerService) {
+    this.logger.add('GitHubService constructed');
+  }
 
   getRepository(){
     this.http.get<Response>('https://api.github.com/users/matheusmisumoto/repos').subscribe(

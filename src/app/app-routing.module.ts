@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppLogComponent } from './app-log/app-log.component';
+import { BtcExchangeManualComponent } from './btc-exchange/btc-exchange.component';
 import { CompoundInterestComponent } from './compound-interest/compound-interest.component';
 import { ConditionalGreetingComponent } from './conditional-greeting/conditional-greeting.component';
 import { DiscDetailsComponent } from './disc-details/disc-details.component';
@@ -29,7 +30,8 @@ const routes: Routes = [
   { path: 'discs', component: DiscListComponent },
   { path: 'discs/:id', component: DiscDetailsComponent },
   { path: 'log', component: AppLogComponent },
-  { path: 'task-list', component: TaskListComponent }
+  { path: 'task-list', component: TaskListComponent },
+  { path: 'bitcoin-exchange-rate', component: BtcExchangeManualComponent }
 ];
 
 @NgModule({

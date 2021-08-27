@@ -8,10 +8,10 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let item of getRandomNumberList(); index as i">
-        <td>{{i+1}}</td>
-        <td>{{i}}</td>
-        <td>{{getRandomNumber()}}</td>
+    <tr *ngFor="let randomItem of randomList; index as randomIndex">
+        <td>{{randomIndex+1}}</td>
+        <td>{{randomIndex}}</td>
+        <td>{{randomItem}}</td>
     </tr>
   </tbody>
 </table>

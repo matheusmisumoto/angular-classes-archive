@@ -20,6 +20,7 @@ import { LoggerService } from './logger.service';
 import { TimerService } from './timer.service';
 import { TasksService } from './tasks.service';
 import { TaskListComponent } from './task-list/task-list.component';
+import { BtcExchangeManualComponent } from './btc-exchange/btc-exchange.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { TaskListComponent } from './task-list/task-list.component';
     DiscListComponent,
     DiscDetailsComponent,
     AppLogComponent,
-    TaskListComponent
+    TaskListComponent,
+    BtcExchangeManualComponent
   ],
   imports: [
     BrowserModule,

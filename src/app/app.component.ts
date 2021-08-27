@@ -12,6 +12,6 @@ export class AppComponent {
   
   constructor(public timer: TimerService, private logger: LoggerService){
     this.logger.add("AppComponent constructed");
-    this.timer.start(1000);
+    this.timer.start(2000);
   }
 }

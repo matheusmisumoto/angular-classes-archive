@@ -1,0 +1,38 @@
+<h1 class="mt-5 mb-3">Bitcoin Exchange Rate</h1>
+<p>This project uses a public API to get the current exchange rate from Bitcoin to United States Dollar, Euro, and British Pound Sterling.
+    The values are loaded with the page, and are updated automatically every minute or manually by the user.
+    Each update action makes the Angular Service transfer the last value to a history of the exchange rates.</p>
+<div *ngIf="getCurrentPrice()">
+    <div class="card mt-5" *ngIf="getCurrentPrice()">
+        <div class="card-body">
+            <h2 class="card-title">Current exchange rate</h2>
+            <div class="alert alert-secondary mt-3 mb-4" role="alert">
+                Last updated on {{this.bitcoin.lastUpdate}}
+            </div>
+            <p><strong>{{this.getCurrentPrice().bpi.USD.description}}: </strong><span [innerHTML]="getCurrentPrice().bpi.USD.symbol"></span>{{this.getCurrentPrice().bpi.USD.rate}}</p>
+            <p><strong>{{this.getCurrentPrice().bpi.EUR.description}}: </strong><span [innerHTML]="getCurrentPrice().bpi.EUR.symbol"></span>{{this.getCurrentPrice().bpi.EUR.rate}}</p>
+            <p><strong>{{this.getCurrentPrice().bpi.GBP.description}}: </strong><span [innerHTML]="getCurrentPrice().bpi.GBP.symbol"></span>{{this.getCurrentPrice().bpi.GBP.rate}}</p>
+            <input type="button" value="Update" class="btn btn-primary container-fluid" (click)="bitcoin.update()">
+        </div>  
+    </div>
+
+    <h2 class="mt-5 my-4">History</h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Date</th>
+            <th>{{this.getCurrentPrice().bpi.USD.description}}</th>
+            <th>{{this.getCurrentPrice().bpi.EUR.description}}</th>
+            <th>{{this.getCurrentPrice().bpi.GBP.description}}</th>
+        </thead>
+        <tbody>
+        <tr *ngFor="let price of this.bitcoin.updateList.slice().reverse(); index as i">
+            <td>{{price.timestamp | date:"full"}}</td>
+            <td>{{price.USD | currency}}</td>
+            <td>{{price.EUR | currency:'EUR'}}</td>
+            <td>{{price.GBP | currency:'GBP'}}</td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
