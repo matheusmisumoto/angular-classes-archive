@@ -17,4 +17,6 @@ Work in progress.
 9.  **Bitcoin Exchange Rate:** This project uses a public API to get the current exchange rate from Bitcoin to United States Dollar, Euro, and British Pound Sterling.
     The values are loaded with the page, and are updated automatically every minute or manually by the user.
     Each update action makes the Angular Service transfer the last value to a history of the exchange rates.
-10. **GitHub Repositories:** List my public GitHub public profile details and repositories by using GitHub public API.
+10. **Bitcoin Wallet:** This project features a fictional Bitcoin wallet interface to buy and sell bitcoins, showing the correspondent amount in United States Dollars (USD). 
+    The exchange rate is provided by a public API used as a service in Angular. After the operation, the balance is updated and don't reset while navigating on this website.
+11. **GitHub Repositories:** List my public GitHub public profile details and repositories by using GitHub public API.

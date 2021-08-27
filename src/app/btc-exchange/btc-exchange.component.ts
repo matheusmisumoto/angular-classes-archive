@@ -7,22 +7,14 @@ import { LoggerService } from '../logger.service';
   templateUrl: './btc-exchange.component.html',
   styleUrls: ['./btc-exchange.component.css']
 })
-export class BtcExchangeManualComponent implements OnInit {
+export class BtcExchangeComponent implements OnInit {
 
   constructor(public bitcoin: BitcoinService, public logger: LoggerService) {
-    this.logger.add("BtcExchangeManualComponent constructed");
+    this.logger.add("BtcExchangeComponent constructed");
   }
 
   ngOnInit(): void {
-    this.logger.add("BtcExchangeManualComponent initialized");
-
-    this.update();
-
-    setInterval(
-      () => {
-        this.bitcoin.update();
-      }
-    , 60000);
+    this.logger.add("BtcExchangeComponent initialized");
   }
 
   getCurrentPrice() {

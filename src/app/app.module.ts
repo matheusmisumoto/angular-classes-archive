@@ -20,7 +20,9 @@ import { LoggerService } from './logger.service';
 import { TimerService } from './timer.service';
 import { TasksService } from './tasks.service';
 import { TaskListComponent } from './task-list/task-list.component';
-import { BtcExchangeManualComponent } from './btc-exchange/btc-exchange.component';
+import { BtcExchangeComponent } from './btc-exchange/btc-exchange.component';
+import { BtcWalletComponent } from './btc-wallet/btc-wallet.component';
+import { BitcoinService } from './bitcoin.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,8 @@ import { BtcExchangeManualComponent } from './btc-exchange/btc-exchange.componen
     DiscDetailsComponent,
     AppLogComponent,
     TaskListComponent,
-    BtcExchangeManualComponent
+    BtcExchangeComponent,
+    BtcWalletComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +47,7 @@ import { BtcExchangeManualComponent } from './btc-exchange/btc-exchange.componen
     HttpClientModule,
     FormsModule
   ],
-  providers: [ GithubService, LoggerService, TimerService, TasksService ],
+  providers: [ GithubService, LoggerService, TimerService, TasksService, BitcoinService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
