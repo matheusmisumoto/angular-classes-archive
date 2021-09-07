@@ -9,6 +9,7 @@ import { DiscDetailsComponent } from './disc-details/disc-details.component';
 import { DiscListComponent } from './disc-list/disc-list.component';
 import { GithubRepositoriesComponent } from './github-repositories/github-repositories.component';
 import { HomeComponent } from './home/home.component';
+import { FirebaseComponent } from './firebase/firebase.component';
 import { MultiplicationTableComponent } from './multiplication-table/multiplication-table.component';
 import { RandomNumbersComponent } from './random-numbers/random-numbers.component';
 import { SimpleInterestComponent } from './simple-interest/simple-interest.component';
@@ -33,7 +34,8 @@ const routes: Routes = [
   { path: 'log', component: AppLogComponent },
   { path: 'task-list', component: TaskListComponent },
   { path: 'bitcoin-exchange-rate', component: BtcExchangeComponent },
-  { path: 'bitcoin-wallet', component: BtcWalletComponent }
+  { path: 'bitcoin-wallet', component: BtcWalletComponent },
+  { path: 'firebase', component: FirebaseComponent }
 ];
 
 @NgModule({

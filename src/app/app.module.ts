@@ -24,6 +24,14 @@ import { BtcExchangeComponent } from './btc-exchange/btc-exchange.component';
 import { BtcWalletComponent } from './btc-wallet/btc-wallet.component';
 import { BitcoinService } from './bitcoin.service';
 
+import { AngularFireModule } from "@angular/fire";
+import { AngularFireAuthModule } from "@angular/fire/auth";
+import { AngularFireDatabaseModule } from "@angular/fire/database";
+import { FirebaseComponent } from './firebase/firebase.component';
+import { AuthService } from './auth.service';
+
+// Firebase project configuration inside @NgModule -> imports
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,15 +47,27 @@ import { BitcoinService } from './bitcoin.service';
     AppLogComponent,
     TaskListComponent,
     BtcExchangeComponent,
-    BtcWalletComponent
+    BtcWalletComponent,
+    FirebaseComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AngularFireModule.initializeApp({
+      apiKey: "",
+      authDomain: "",
+      databaseURL: "",
+      projectId: "",
+      storageBucket: "",
+      messagingSenderId: "",
+      appId: ""
+    }),
+    AngularFireAuthModule,
+    AngularFireDatabaseModule
   ],
-  providers: [ GithubService, LoggerService, TimerService, TasksService, BitcoinService ],
+  providers: [ GithubService, LoggerService, TimerService, TasksService, BitcoinService, AuthService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

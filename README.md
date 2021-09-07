@@ -2,7 +2,7 @@
 
 A compilation of all projects developed during my Angular classes at São Paulo State Technological College in Santos. The projects cover subjects like basic math operations, conditional rules, routes, forms, usage of API's and authentication.
 
-Work in progress.
+See it in action: https://projects.matheusmisumoto.dev/angular-classes/
 
 ## List of Projects
 1. **Conditional Greeting:** a page that displays a greeting accordingly with the time of the day.
@@ -20,3 +20,4 @@ Work in progress.
 10. **Bitcoin Wallet:** This project features a fictional Bitcoin wallet interface to buy and sell bitcoins, showing the correspondent amount in United States Dollars (USD). 
     The exchange rate is provided by a public API used as a service in Angular. After the operation, the balance is updated and don't reset while navigating on this website.
 11. **GitHub Repositories:** List my public GitHub public profile details and repositories by using GitHub public API.
+12. **Firebase Authentication and Database:** This project uses Google Firebase to create an authentication page to a restrict area of the website. The user can login using a registered email and password, or login with Google Account. Once logged in, the user can add and remove entries to a list stored on Realtime Database.
