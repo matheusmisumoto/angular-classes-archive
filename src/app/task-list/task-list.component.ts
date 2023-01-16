@@ -9,6 +9,8 @@ import { TasksService } from '../tasks.service';
 })
 export class TaskListComponent implements OnInit {
 
+  task!: string;
+
   constructor(private logger: LoggerService, public tasks: TasksService) {
     this.logger.add('TaskListComponent constructed');
   }
