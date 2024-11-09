@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -24,50 +24,49 @@ import { BtcExchangeComponent } from './btc-exchange/btc-exchange.component';
 import { BtcWalletComponent } from './btc-wallet/btc-wallet.component';
 import { BitcoinService } from './bitcoin.service';
 
-import { AngularFireModule } from "@angular/fire";
-import { AngularFireAuthModule } from "@angular/fire/auth";
-import { AngularFireDatabaseModule } from "@angular/fire/database";
-import { FirebaseComponent } from './firebase/firebase.component';
-import { AuthService } from './auth.service';
+// import { AngularFireModule } from "@angular/fire";
+// import { AngularFireAuthModule } from "@angular/fire/auth";
+// import { AngularFireDatabaseModule } from "@angular/fire/database";
+// import { FirebaseComponent } from './firebase/firebase.component';
+// import { AuthService } from './auth.service';
 
 // Firebase project configuration inside @NgModule -> imports
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    GithubRepositoriesComponent,
-    RandomNumbersComponent,
-    MultiplicationTableComponent,
-    SimpleInterestComponent,
-    CompoundInterestComponent,
-    ConditionalGreetingComponent,
-    DiscListComponent,
-    DiscDetailsComponent,
-    AppLogComponent,
-    TaskListComponent,
-    BtcExchangeComponent,
-    BtcWalletComponent,
-    FirebaseComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    AngularFireModule.initializeApp({
-      apiKey: "",
-      authDomain: "",
-      databaseURL: "",
-      projectId: "",
-      storageBucket: "",
-      messagingSenderId: "",
-      appId: ""
-    }),
-    AngularFireAuthModule,
-    AngularFireDatabaseModule
-  ],
-  providers: [ GithubService, LoggerService, TimerService, TasksService, BitcoinService, AuthService ],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
+@NgModule({ declarations: [
+        AppComponent,
+        HomeComponent,
+        GithubRepositoriesComponent,
+        RandomNumbersComponent,
+        MultiplicationTableComponent,
+        SimpleInterestComponent,
+        CompoundInterestComponent,
+        ConditionalGreetingComponent,
+        DiscListComponent,
+        DiscDetailsComponent,
+        AppLogComponent,
+        TaskListComponent,
+        BtcExchangeComponent,
+        BtcWalletComponent,
+        // FirebaseComponent
+    ],
+    bootstrap: [AppComponent], 
+    imports: [BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        /*
+        AngularFireModule.initializeApp({
+            apiKey: "",
+            authDomain: "",
+            databaseURL: "",
+            projectId: "",
+            storageBucket: "",
+            messagingSenderId: "",
+            appId: ""
+        }),
+        AngularFireAuthModule,
+        AngularFireDatabaseModule
+        */
+    ], 
+    providers: [GithubService, LoggerService, TimerService, TasksService, BitcoinService, /* AuthService, */ provideHttpClient(withInterceptorsFromDi())] })
+
+  export class AppModule { }
