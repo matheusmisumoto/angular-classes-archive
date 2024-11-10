@@ -24,11 +24,10 @@ import { BtcExchangeComponent } from './btc-exchange/btc-exchange.component';
 import { BtcWalletComponent } from './btc-wallet/btc-wallet.component';
 import { BitcoinService } from './bitcoin.service';
 
-// import { AngularFireModule } from "@angular/fire";
-// import { AngularFireAuthModule } from "@angular/fire/auth";
-// import { AngularFireDatabaseModule } from "@angular/fire/database";
-// import { FirebaseComponent } from './firebase/firebase.component';
-// import { AuthService } from './auth.service';
+import { initializeApp } from "firebase/app";
+import { AuthService } from './auth.service';
+import { FirebaseComponent } from './firebase/firebase.component';
+import { environment } from 'src/environments/environment';
 
 // Firebase project configuration inside @NgModule -> imports
 
@@ -47,26 +46,26 @@ import { BitcoinService } from './bitcoin.service';
         TaskListComponent,
         BtcExchangeComponent,
         BtcWalletComponent,
-        // FirebaseComponent
+        FirebaseComponent
     ],
     bootstrap: [AppComponent], 
     imports: [BrowserModule,
         AppRoutingModule,
         FormsModule,
-        /*
-        AngularFireModule.initializeApp({
-            apiKey: "",
-            authDomain: "",
-            databaseURL: "",
-            projectId: "",
-            storageBucket: "",
-            messagingSenderId: "",
-            appId: ""
-        }),
-        AngularFireAuthModule,
-        AngularFireDatabaseModule
-        */
-    ], 
-    providers: [GithubService, LoggerService, TimerService, TasksService, BitcoinService, /* AuthService, */ provideHttpClient(withInterceptorsFromDi())] })
 
-  export class AppModule { }
+    ], 
+    providers: [GithubService, LoggerService, TimerService, TasksService, BitcoinService, AuthService, provideHttpClient(withInterceptorsFromDi())] })
+
+  export class AppModule {
+    constructor() {
+        initializeApp({
+            apiKey: environment.apiKey,
+            authDomain: environment.authDomain,
+            databaseURL: environment.databaseURL,
+            projectId: environment.projectId,
+            storageBucket: environment.storageBucket,
+            messagingSenderId: environment.messagingSenderId,
+            appId: environment.appId
+        });
+    }
+  }

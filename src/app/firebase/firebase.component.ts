@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
-import { AngularFireDatabase, AngularFireList } from "@angular/fire/database";
+import { getDatabase, ref, onValue, DatabaseReference, push, set, remove, Database } from "firebase/database";
 import { LoggerService } from '../logger.service';
 import { Observable } from 'rxjs';
-import { map } from "rxjs/operators";
 
 @Component({
   selector: 'app-firebase',
@@ -16,19 +15,28 @@ export class FirebaseComponent implements OnInit {
   password!: string;
 
   text!: string;
-  listRef: AngularFireList<any>;
+  database: Database;
+  listRef: DatabaseReference;
   list: Observable<any>;
 
-  constructor(public authService: AuthService, private db: AngularFireDatabase, public logger: LoggerService) {
-    this.listRef = db.list("list");
-    this.list = this.listRef
-      .snapshotChanges()
-      .pipe(
-        map(changes =>
-          changes.map(c => ({ key: c.payload.key, ...c.payload.val() }))
-        )
-      );
+  constructor(public authService: AuthService, public logger: LoggerService) {
+    this.database = getDatabase();
+    this.listRef = ref(this.database, 'list');
 
+    this.list = new Observable((observer) => {
+      onValue(this.listRef, (snapshot) => {
+        const data = snapshot.val();
+        if(data){
+          const changes = Object.keys(data).map(key => ({ key, ...data[key] }));
+          observer.next(changes);
+        } else {
+          observer.next([])
+        }
+      }, (error) => {
+        observer.error(error);
+      });
+    });
+    
     this.logger.add('FirebaseComponent constructed');
   }
 
@@ -49,14 +57,15 @@ export class FirebaseComponent implements OnInit {
   }
 
   addItem() {
-    this.listRef.push({
+    const newItemRef = push(this.listRef);
+    set(newItemRef, {
       text: this.text
     });
     this.text = "";
   }
 
   deleteItem(key: string) {
-    this.listRef.remove(key);
+    remove(ref(this.database, 'list/' + key));
   }
 
 }

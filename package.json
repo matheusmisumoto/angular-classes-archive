@@ -1,6 +1,6 @@
 {
   "name": "angular-classes",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -19,7 +19,7 @@
     "@angular/platform-browser-dynamic": "^18.2.11",
     "@angular/router": "^18.2.11",
     "ajv": "^6.9.1",
-    "firebase": "^8.1.1",
+    "firebase": "^11.0.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.10"

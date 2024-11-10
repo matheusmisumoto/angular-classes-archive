@@ -44,10 +44,10 @@
 		</div>
 	</div>
 	
-	<div *ngIf="(list | async).length == 0" class="alert container alert-dark" role="alert">No entry found in Realtime Database.</div>
+	<div *ngIf="(list | async)?.length == 0" class="alert container alert-dark" role="alert">No entry found in Realtime Database.</div>
 
-	<table  *ngIf="(list | async).length > 0" class="table">
-		<tr *ngFor="let item of list | async">
+	<table  *ngIf="(list | async)?.length > 0" class="table">
+		<tr *ngFor="let item of (list | async) || []">
 			<td [title]="['key: ' + item.key]" class="container align-middle">{{item.text}}</td>
 			<td><button class="btn btn-danger btn-sm" (click)="deleteItem(item.key)">Remove</button></td>
 		</tr>
