@@ -5,22 +5,22 @@
 
 <div class="card mb-5">
     <div class="card-body">
-        <div class="form-group">
+        <div class="form-group mb-3">
             <input type="text" [(ngModel)]="task" class="form-control" id="newtask" placeholder="Insert a new task">
         </div>
-        <button type="submit" [disabled]="!task" (click)="this.tasks.add(task); task=''" class="btn btn-primary container">Submit</button>
+        <button type="submit" [disabled]="!task" (click)="this.tasks.add(task); task=''" class="btn btn-primary container p-2">Submit</button>
     </div>
 </div>
 
 
 <h2 class="mt-5 mb-3">Tasks</h2>
 
-<div *ngIf="this.tasks.getList().length == 0" class="alert container alert-dark" role="alert">You have no tasks registered.</div>
+<div *ngIf="this.tasks.getList().length == 0" class="alert container alert-dark text-center" role="alert">You have no tasks registered.</div>
 
 
-<table *ngIf="this.tasks.getList().length > 0" class="table">
-    <tr *ngFor="let task of this.tasks.getList(), index as i">
-        <td class="container align-middle">{{task.title}}</td>
-        <td><button class="btn btn-danger btn-sm" (click)="this.tasks.remove(i)">Remove</button></td>
-    </tr>
-</table>
+<ul *ngIf="this.tasks.getList().length > 0" class="list-group">
+    <li *ngFor="let task of this.tasks.getList(), index as i" class="list-group-item d-flex flex-row justify-content-between align-items-center">
+        <div class="flex-xxl-fill overflow-x-hidden text-overflow">{{task.title}}</div>
+        <div><button class="btn btn-danger btn-sm" (click)="this.tasks.remove(i)">Remove</button></div>
+    </li>
+</ul>
