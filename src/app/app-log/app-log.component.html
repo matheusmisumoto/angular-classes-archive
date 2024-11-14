@@ -6,8 +6,8 @@
 
 <h2 class="mt-5 mb-3">Event log</h2>
 
-<ul class="list-unstyled">
-    <li class="my-2" *ngFor="let message of this.logger.messages.slice().reverse()">{{message}}</li>
+<ul class="list-group">
+    <li class="list-group-item" *ngFor="let message of this.logger.messages.slice().reverse()">{{message}}</li>
 </ul>
 
-<button class="btn btn-danger container-fluid" (click)="logger.clear()">Clear log</button>
+<button class="btn btn-danger container-fluid mt-4 p-2" (click)="logger.clear()">Clear log</button>
