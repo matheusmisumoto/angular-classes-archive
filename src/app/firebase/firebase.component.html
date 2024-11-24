@@ -9,18 +9,18 @@
 	<div *ngIf="authService.authError" class="alert container alert-danger" role="alert">{{ authService.authError }}
 	</div>
 
-	<div class="card container">
-		<div class="card-body">
+	<div class="card">
+		<div class="card-body d-flex flex-column gap-3">
 			<div class="form-group">
 				<label for="email">Email</label>
-				<input type="email" class="form-control" id="email" name="email" [(ngModel)]="email">
+				<input type="email" class="form-control mt-1" id="email" name="email" [(ngModel)]="email">
 			</div>
-				<div class="form-group">
-					<label for="password">Password</label>
-					<input type="password" class="form-control" id="password" name="password" [(ngModel)]="password">
-                </div>
-				<button type="submit" class="btn btn-primary container mt-3" (click)="loginWithEmail()">Sign in</button>
-				<button type="submit" class="btn btn-secondary container mt-3" (click)="loginWithGoogle()">Sign in with Google</button>
+			<div class="form-group mb-2">
+				<label for="password">Password</label>
+				<input type="password" class="form-control mt-1" id="password" name="password" [(ngModel)]="password">
+			</div>
+			<button type="submit" class="btn btn-primary container p-2" (click)="loginWithEmail()">Sign in</button>
+			<button type="submit" class="btn btn-secondary container p-2" (click)="loginWithGoogle()">Sign in with Google</button>
 		</div>
 	</div>
 </div>
@@ -28,7 +28,7 @@
 
 
 <div class="mt-5" *ngIf="authService.user | async">
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<nav class="navbar navbar-expand-lg navbar-light px-3 bg-light d-flex justify-content-between">
 		<div class="navbar-nav mr-auto">Logged in as {{(authService.user | async)?.email}}</div>
 		<button class="btn btn-danger" href="#" (click)="logout()">Logout</button>
 	</nav>
@@ -37,20 +37,18 @@
 
 	<div class="card my-5">
 		<div class="card-body">
-			<div class="form-group">
-				<input [(ngModel)]="text" class="form-control">
-			</div>
-			<button class="btn btn-primary container" [disabled]="!text" (click)="addItem()">Insert</button>
+			<input [(ngModel)]="text" class="form-control mb-3" placeholder="Type entry here...">
+			<button class="btn btn-primary p-2 container" [disabled]="!text" (click)="addItem()">Insert</button>
 		</div>
 	</div>
 	
 	<div *ngIf="(list | async)?.length == 0" class="alert container alert-dark" role="alert">No entry found in Realtime Database.</div>
 
-	<table  *ngIf="(list | async)?.length > 0" class="table">
-		<tr *ngFor="let item of (list | async) || []">
-			<td [title]="['key: ' + item.key]" class="container align-middle">{{item.text}}</td>
-			<td><button class="btn btn-danger btn-sm" (click)="deleteItem(item.key)">Remove</button></td>
-		</tr>
-	</table>
+	<ul  *ngIf="(list | async)?.length > 0" class="list-group">
+		<li *ngFor="let item of (list | async) || []" class="list-group-item d-flex justify-content-between align-items-center">
+			<div [title]="['key: ' + item.key]" class="flex-xxl-fill overflow-x-hidden text-overflow">{{item.text}}</div>
+			<div><button class="btn btn-danger btn-sm" (click)="deleteItem(item.key)">Remove</button></div>
+		</li>
+	</ul>
 
 </div>
