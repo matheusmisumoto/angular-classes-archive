@@ -13,8 +13,8 @@
 <div class="alert alert-secondary mt-3 mb-4" role="alert">
     Exchange rate last updated on {{this.bitcoin.lastUpdate}}
 </div>
-<p>I want to...</p>
-<div class="form-check">
+<p class="mb-0">I want to...</p>
+<div class="form-check mt-2">
   <input
     class="form-check-input"
     type="radio"
@@ -27,7 +27,7 @@
     buy
   </label>
 </div>
-<div class="form-check">
+<div class="form-check mb-4">
   <input
     class="form-check-input"
     type="radio"
@@ -40,8 +40,8 @@
     sell
   </label>
 </div>
-<div class="form-group mt-3">
+<div class="form-group mb-4">
   <input type="number" class="form-control" id="btc" step="0.00001" min="0" [(ngModel)]="btc" />
-  <p class="mt-3">BTC = {{ getExchange() | currency:'USD' }}</p>
+  <p class="mt-2">BTC = {{ getExchange() | currency:'USD' }}</p>
 </div>
-<button type="submit" class="btn btn-primary container-fluid" (click)="updateBalance()">Make transaction</button>
+<button type="submit" class="btn btn-primary container-fluid p-2" (click)="updateBalance()">Confirm transaction</button>
