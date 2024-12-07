@@ -7,12 +7,22 @@
         <div class="card-body">
             <h2 class="card-title">Current exchange rate</h2>
             <div class="alert alert-secondary mt-3 mb-4" role="alert">
-                Last updated on {{this.bitcoin.lastUpdate}}
+                Last updated on {{this.bitcoin.lastUpdate.toLocaleString("en-US", {
+                    weekday: "long",
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                    hour: "2-digit",
+                    minute: "2-digit",
+                    second: "2-digit",
+                    timeZoneName: "short",
+                    hour12: false
+                  })}}
             </div>
             <p><strong>{{this.getCurrentPrice().bpi.USD.description}}: </strong><span [innerHTML]="getCurrentPrice().bpi.USD.symbol"></span>{{this.getCurrentPrice().bpi.USD.rate}}</p>
             <p><strong>{{this.getCurrentPrice().bpi.EUR.description}}: </strong><span [innerHTML]="getCurrentPrice().bpi.EUR.symbol"></span>{{this.getCurrentPrice().bpi.EUR.rate}}</p>
             <p><strong>{{this.getCurrentPrice().bpi.GBP.description}}: </strong><span [innerHTML]="getCurrentPrice().bpi.GBP.symbol"></span>{{this.getCurrentPrice().bpi.GBP.rate}}</p>
-            <input type="button" value="Update" class="btn btn-primary container-fluid" (click)="bitcoin.update()">
+            <input type="button" value="Update" class="btn btn-primary container-fluid p-2 mt-2" (click)="bitcoin.update()">
         </div>  
     </div>
 
@@ -27,7 +37,17 @@
         </thead>
         <tbody>
         <tr *ngFor="let price of this.bitcoin.updateList.slice().reverse(); index as i">
-            <td>{{price.timestamp | date:"full"}}</td>
+            <td>{{price.timestamp.toLocaleString("en-US", {
+                weekday: "long",
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+                hour: "2-digit",
+                minute: "2-digit",
+                second: "2-digit",
+                timeZoneName: "short",
+                hour12: false
+              })}}</td>
             <td>{{price.USD | currency}}</td>
             <td>{{price.EUR | currency:'EUR'}}</td>
             <td>{{price.GBP | currency:'GBP'}}</td>
