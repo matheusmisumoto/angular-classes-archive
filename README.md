@@ -21,3 +21,32 @@ See it in action: https://projects.matheusmisumoto.dev/angular-classes/
     The exchange rate is provided by a public API used as a service in Angular. After the operation, the balance is updated and don't reset while navigating on this website.
 11. **GitHub Repositories:** List my public GitHub public profile details and repositories by using GitHub public API.
 12. **Firebase Authentication and Database:** This project uses Google Firebase to create an authentication page to a restrict area of the website. The user can login using a registered email and password, or login with Google Account. Once logged in, the user can add and remove entries to a list stored on Realtime Database.
+
+## Environment setup
+
+1. After cloning this repository, run `npm install`.
+2. Edit `environment.ts` with your Firebase SDK.
+3. Change `defaultConfiguration` on `angular.json` to `development`
+
+## Development server
+
+To start a local development server, run:
+
+```bash
+ng serve
+```
+
+Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+
+## Building
+
+To build the project run:
+
+```bash
+ng build
+```
+
+This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+
+---
+Developed with ☕ by [Matheus Misumoto](https://matheusmisumoto.dev) in Santos, Brazil
