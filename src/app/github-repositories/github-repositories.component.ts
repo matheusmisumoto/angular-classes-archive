@@ -4,9 +4,10 @@ import { LoggerService } from '../logger.service';
 import { TimerService } from '../timer.service';
 
 @Component({
-  selector: 'app-github-repositories',
-  templateUrl: './github-repositories.component.html',
-  styleUrls: ['./github-repositories.component.css']
+    selector: 'app-github-repositories',
+    templateUrl: './github-repositories.component.html',
+    styleUrls: ['./github-repositories.component.css'],
+    standalone: false
 })
 export class GithubRepositoriesComponent implements OnInit {
 

@@ -3,9 +3,10 @@ import { BitcoinService } from '../bitcoin.service';
 import { LoggerService } from '../logger.service';
 
 @Component({
-  selector: 'app-btc-exchange',
-  templateUrl: './btc-exchange.component.html',
-  styleUrls: ['./btc-exchange.component.css']
+    selector: 'app-btc-exchange',
+    templateUrl: './btc-exchange.component.html',
+    styleUrls: ['./btc-exchange.component.css'],
+    standalone: false
 })
 export class BtcExchangeComponent implements OnInit {
 

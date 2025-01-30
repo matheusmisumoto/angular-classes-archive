@@ -3,9 +3,10 @@ import { LoggerService } from '../logger.service';
 import { TimerService } from '../timer.service';
 
 @Component({
-  selector: 'app-multiplication-table',
-  templateUrl: './multiplication-table.component.html',
-  styleUrls: ['./multiplication-table.component.css']
+    selector: 'app-multiplication-table',
+    templateUrl: './multiplication-table.component.html',
+    styleUrls: ['./multiplication-table.component.css'],
+    standalone: false
 })
 export class MultiplicationTableComponent implements OnInit {
 

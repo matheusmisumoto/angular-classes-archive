@@ -3,9 +3,10 @@ import { LoggerService } from '../logger.service';
 import { TimerService } from '../timer.service';
 
 @Component({
-  selector: 'app-random',
-  templateUrl: './random-numbers.component.html',
-  styleUrls: ['./random-numbers.component.css']
+    selector: 'app-random',
+    templateUrl: './random-numbers.component.html',
+    styleUrls: ['./random-numbers.component.css'],
+    standalone: false
 })
 export class RandomNumbersComponent implements OnInit {
   randomList: number[] = [];

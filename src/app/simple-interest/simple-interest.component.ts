@@ -3,9 +3,10 @@ import { LoggerService } from '../logger.service';
 import { TimerService } from '../timer.service';
 
 @Component({
-  selector: 'app-simple-interest',
-  templateUrl: './simple-interest.component.html',
-  styleUrls: ['./simple-interest.component.css']
+    selector: 'app-simple-interest',
+    templateUrl: './simple-interest.component.html',
+    styleUrls: ['./simple-interest.component.css'],
+    standalone: false
 })
 export class SimpleInterestComponent implements OnInit {
   c: number;

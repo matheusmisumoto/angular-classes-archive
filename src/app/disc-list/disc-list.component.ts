@@ -6,9 +6,10 @@ import { TimerService } from '../timer.service';
 import { discs } from '../discs';
 
 @Component({
-  selector: 'app-disc-list',
-  templateUrl: './disc-list.component.html',
-  styleUrls: ['./disc-list.component.css']
+    selector: 'app-disc-list',
+    templateUrl: './disc-list.component.html',
+    styleUrls: ['./disc-list.component.css'],
+    standalone: false
 })
 export class DiscListComponent implements OnInit {
 

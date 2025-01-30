@@ -3,9 +3,10 @@ import { LoggerService } from '../logger.service';
 import { TimerService } from '../timer.service';
 
 @Component({
-  selector: 'app-app-log',
-  templateUrl: './app-log.component.html',
-  styleUrls: ['./app-log.component.css']
+    selector: 'app-app-log',
+    templateUrl: './app-log.component.html',
+    styleUrls: ['./app-log.component.css'],
+    standalone: false
 })
 export class AppLogComponent implements OnInit {
 

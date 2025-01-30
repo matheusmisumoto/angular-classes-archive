@@ -3,9 +3,10 @@ import { LoggerService } from '../logger.service';
 import { TimerService } from '../timer.service';
 
 @Component({
-  selector: 'app-conditional-greeting',
-  templateUrl: './conditional-greeting.component.html',
-  styleUrls: ['./conditional-greeting.component.css']
+    selector: 'app-conditional-greeting',
+    templateUrl: './conditional-greeting.component.html',
+    styleUrls: ['./conditional-greeting.component.css'],
+    standalone: false
 })
 export class ConditionalGreetingComponent implements OnInit {
 

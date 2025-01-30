@@ -9,9 +9,10 @@ import { discs } from '../discs';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
-  selector: 'app-disc-details',
-  templateUrl: './disc-details.component.html',
-  styleUrls: ['./disc-details.component.css']
+    selector: 'app-disc-details',
+    templateUrl: './disc-details.component.html',
+    styleUrls: ['./disc-details.component.css'],
+    standalone: false
 })
 
 export class DiscDetailsComponent implements OnInit {

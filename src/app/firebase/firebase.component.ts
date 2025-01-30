@@ -5,9 +5,10 @@ import { LoggerService } from '../logger.service';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-firebase',
-  templateUrl: './firebase.component.html',
-  styleUrls: ['./firebase.component.css']
+    selector: 'app-firebase',
+    templateUrl: './firebase.component.html',
+    styleUrls: ['./firebase.component.css'],
+    standalone: false
 })
 export class FirebaseComponent implements OnInit {
 
