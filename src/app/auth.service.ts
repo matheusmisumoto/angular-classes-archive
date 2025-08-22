@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { LoggerService } from "./logger.service";
 
-import { getAuth, signInWithPopup, GoogleAuthProvider, UserCredential, signInWithEmailAndPassword, Auth, signOut, onAuthStateChanged, User } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, signInWithEmailAndPassword, Auth, signOut, onAuthStateChanged, User } from "firebase/auth";
 import { Observable } from "rxjs";
 
 @Injectable()
