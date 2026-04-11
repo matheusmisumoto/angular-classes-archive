@@ -7,7 +7,9 @@
 <h2 class="mt-5 mb-3">Event log</h2>
 
 <ul class="list-group">
-    <li class="list-group-item" *ngFor="let message of this.logger.messages.slice().reverse()">{{message}}</li>
+  @for (message of this.logger.messages.slice().reverse(); track message) {
+    <li class="list-group-item">{{message}}</li>
+  }
 </ul>
 
 <button class="btn btn-danger container-fluid mt-4 p-2" (click)="logger.clear()">Clear log</button>

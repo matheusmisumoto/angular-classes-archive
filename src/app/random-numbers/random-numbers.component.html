@@ -2,16 +2,18 @@
 <table class="table">
   <thead>
     <tr>
-        <th>#</th>
-        <th>Array Index</th>
-        <th>Number</th>
+      <th>#</th>
+      <th>Array Index</th>
+      <th>Number</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let randomItem of randomList; index as randomIndex">
+    @for (randomItem of randomList; track randomItem; let randomIndex = $index) {
+      <tr>
         <td>{{randomIndex+1}}</td>
         <td>{{randomIndex}}</td>
         <td>{{randomItem}}</td>
-    </tr>
+      </tr>
+    }
   </tbody>
 </table>

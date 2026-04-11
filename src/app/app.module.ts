@@ -27,7 +27,7 @@ import { BitcoinService } from './bitcoin.service';
 import { initializeApp } from "firebase/app";
 import { AuthService } from './auth.service';
 import { FirebaseComponent } from './firebase/firebase.component';
-import { environment } from 'src/environments/environment';
+import { environment } from '../environments/environment';
 
 // Firebase project configuration inside @NgModule -> imports
 

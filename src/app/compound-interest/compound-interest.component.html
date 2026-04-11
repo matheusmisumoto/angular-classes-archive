@@ -19,9 +19,11 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let resultado of showMeTheMoney(c,i,t); index as indice">
-      <td>{{indice+1}}</td>
-      <td>{{resultado | currency}}</td>
-    </tr>
+    @for (resultado of showMeTheMoney(c,i,t); track resultado; let indice = $index) {
+      <tr>
+        <td>{{indice+1}}</td>
+        <td>{{resultado | currency}}</td>
+      </tr>
+    }
   </tbody>
 </table>

@@ -1,4 +1,5 @@
-<div *ngIf="getRepositories()" class="container-fluid mb-5">
+@if (getRepositories()) {
+  <div class="container-fluid mb-5">
     <div class="d-flex align-items-center gap-3 mt-5">
       <img src="{{this.github.avatarURL}}" width="80" height="80" alt="{{this.github.login}} profile pic" class="rounded-circle float-start">
       <h1 class="my-0">My repositories on GitHub</h1>
@@ -6,11 +7,14 @@
     <div class="alert alert-secondary mt-4 mb-5">
       <a href="{{this.github.profileURL}}" target="_blank">{{this.github.profileURL}}</a>
     </div>
-    <div class="card my-3" *ngFor="let repo of this.github.dados">
-      <div class="card-body">
-        <h4 class="card-title">{{repo.name}}</h4>
-        <p>{{repo.description}}</p>
-        <a href="{{repo.html_url}}" target="_blank" class="btn btn-primary">View repository</a>
+    @for (repo of this.github.dados; track repo) {
+      <div class="card my-3">
+        <div class="card-body">
+          <h4 class="card-title">{{repo.name}}</h4>
+          <p>{{repo.description}}</p>
+          <a href="{{repo.html_url}}" target="_blank" class="btn btn-primary">View repository</a>
+        </div>
       </div>
-    </div>
-</div>
+    }
+  </div>
+}
