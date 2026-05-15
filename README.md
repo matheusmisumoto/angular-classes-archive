@@ -1,5 +1,7 @@
 # Angular Classes Archive
 
+![Screenshot of the website](screenshot.webp)
+
 A compilation of all projects developed during my Angular classes at São Paulo State Technological College in Santos. The projects cover subjects like basic math operations, conditional rules, routes, forms, usage of API's and authentication.
 
 > [!IMPORTANT]
