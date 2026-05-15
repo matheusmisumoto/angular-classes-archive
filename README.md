@@ -2,7 +2,8 @@
 
 A compilation of all projects developed during my Angular classes at São Paulo State Technological College in Santos. The projects cover subjects like basic math operations, conditional rules, routes, forms, usage of API's and authentication.
 
-See it in action: https://projects.matheusmisumoto.dev/angular-classes/
+> [!IMPORTANT]
+> 📦 **This repository is archived.** It's kept as a record of my Angular learning journey and won't receive further updates. Feel free to explore, fork, or use the code as a reference! For active projects, please visit my [portfolio](https://matheusmisumoto.dev).
 
 ## List of Projects
 1. **Conditional Greeting:** a page that displays a greeting accordingly with the time of the day.
